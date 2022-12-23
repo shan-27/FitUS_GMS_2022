@@ -11,7 +11,6 @@ const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground'
 // } = process.env
 
 const MAILING_SERVICE_CLIENT_ID = '846409524443-33rjri16ljv989j4e6aht9nu2nb0s1m8.apps.googleusercontent.com'
-
 const MAILING_SERVICE_CLIENT_SECRET = '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'
 const MAILING_SERVICE_REFRESH_TOKEN = '1//04PAmFcE99QrgCgYIARAAGAQSNgF-L9IrJWZ-_DN6bZlhHGwk7hTdrZgbTj3b_rwamliRaH7ZmbNm8uxJ6e2qj2e4BMbu441jIA'
 const SENDER_EMAIL_ADDRESS = 'fitnessappmail25@gmail.com'
@@ -36,8 +35,8 @@ const sendEmail = (to, url, title) => {
         service: 'gmail',
         auth: {
          
-            user: "fitnessappmail25@gmail.com",
-            pass: 'pfqjajcgmflofnbs',
+            user: "fitusgms2022@gmail.com",
+            pass: 'jrtxegpmayuqtsaj',
             // clientId: MAILING_SERVICE_CLIENT_ID,
             // clientSecret: MAILING_SERVICE_CLIENT_SECRET,
             // refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
