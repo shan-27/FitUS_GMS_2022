@@ -1,7 +1,18 @@
 import { FaCheck, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import { Link, Redirect } from 'react-router-dom';
+import { useState } from 'react';
 
-const Plans = () => {
+const Plans = ({isAuthenticated}) => {
+  const [check, setCheck] = useState()
+  if(check){
+    if(isAuthenticated){
+      return <Redirect to={'/payment'}></Redirect>
+    } else {
+      return <Redirect to={'/login'}></Redirect>
+    }
+  }
   return (
     <section className="container my-5 py-5">
       <div className="text-center mb-3">
@@ -40,7 +51,7 @@ const Plans = () => {
                   personalized sessions
                 </li>
               </ul>
-              <button type="button" className="w-100 btn btn-lg btn-primary">
+              <button onClick={() => setCheck(true)} type="button" className="w-100 btn btn-lg btn-primary">
                 Choose the plan
               </button>
             </div>
@@ -77,11 +88,11 @@ const Plans = () => {
                   personalized sessions
                 </li>
               </ul>
-              <Link to={"/payment"}>
-              <button type="button" className="w-100 btn btn-lg btn-primary">
+              
+              <button onClick={() => setCheck(true)} type="button" className="w-100 btn btn-lg btn-primary">
                 Choose the plan
               </button>
-              </Link>
+              
             </div>
           </div>
         </div>
@@ -116,7 +127,7 @@ const Plans = () => {
                   personalized sessions
                 </li>
               </ul>
-              <button type="button" className="w-100 btn btn-lg btn-primary">
+              <button onClick={() => setCheck(true)} type="button" className="w-100 btn btn-lg btn-primary">
                 Choose the plan
               </button>
             </div>
@@ -127,4 +138,8 @@ const Plans = () => {
   );
 };
 
-export default Plans;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps) (Plans);
