@@ -63,7 +63,7 @@ const memberCtrl = {
         lastname,
         email,
         phone,
-        password,
+        password: passwordHash,
         height,
         weight,
         address,
@@ -154,7 +154,9 @@ const memberCtrl = {
       if (!member)
         return res.status(400).json({ msg: "This E-mail does not exist." });
 
-      if (member.password !== password) {
+        const isMatch = await bcrypt.compare(password, member.password);
+
+      if (!isMatch) {
         return res.status(400).json({ msg: "Password is incorrect." });
       }
 
