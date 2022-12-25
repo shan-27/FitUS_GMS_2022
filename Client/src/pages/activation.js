@@ -54,7 +54,7 @@ export const MemberActivation  = function () {
                     </label>
                   </div>
                   <div className="text-center d-grid gap-2 col-6 mx-auto py-3">
-                    <a href="/login">
+                    <a href="/">
                       <button
                         type="button"
                         className="btn login__btn btn-primary"
@@ -69,7 +69,7 @@ export const MemberActivation  = function () {
                 {" "}
                 <div className="mb-3 py-4">
                   <label className="text-center ">
-                    Email Verification Failed.
+                    Email Verification Completed.
                   </label>
                 </div>
                 <div className="text-center d-grid gap-2 col-6 mx-auto py-3">
@@ -78,7 +78,7 @@ export const MemberActivation  = function () {
                       type="button"
                       className="btn login__btn btn-primary"
                     >
-                      Check again later
+                      Login here
                     </button>
                   </a>
                 </div>

@@ -30,7 +30,7 @@ const memberSchema = new mongoose.Schema({
     },
     role: {
         type: Number,
-        default: 2 // 0 = admin, 1 = instructor, 2 = member
+        default: 2 // 3 = admin, 1 = instructor, 2 = member
     },
     height: {
         type: String,
